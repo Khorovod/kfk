@@ -1,0 +1,11 @@
+﻿{
+  "namespace" : "OrdersMessage",
+  "type": "record",
+  "name": "Order",
+  "fields": [
+    {"name": "Id", "type": "int"},
+    {"name": "Dishes", "type": { "type": "array", "items": "string" }},
+    {"name": "TotalCost", "type": "double"},
+    {"name": "CreatedAt", "type": {"type" : "long", "logicalType": "timestamp-millis" }}
+  ]
+}
