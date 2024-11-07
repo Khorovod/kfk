@@ -8,7 +8,7 @@ namespace Producer.Services;
 
 public class ProducerService : IHostedService, IDisposable
 {
-    private readonly IProducer<Null, byte[]> _producer;
+    private readonly IProducer<string, byte[]> _producer;
     private readonly KafkaConfiguration _kafkaConfiguration;
     private int _id;
     
@@ -79,7 +79,7 @@ public class ProducerService : IHostedService, IDisposable
         }
     }
     
-    private IProducer<Null, byte[]> ConfigureProducer()
+    private IProducer<string, byte[]> ConfigureProducer()
     {
         Console.WriteLine($"Configure producing on: {_kafkaConfiguration.Brokers}");
         
@@ -94,7 +94,7 @@ public class ProducerService : IHostedService, IDisposable
             //Acks = Acks.All,
         };
 
-        return new ProducerBuilder<Null, byte[]>(config).Build();
+        return new ProducerBuilder<string, byte[]>(config).Build();
     }
 
     private static string[] GetDishes()
