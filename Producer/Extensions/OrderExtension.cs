@@ -7,7 +7,7 @@ namespace Producer.Extensions;
 
 public static class OrderExtension
 {
-    public static Message<Null, byte[]> ToKafkaMessage(this Order order)
+    public static Message<string, byte[]> ToKafkaMessage(this Order order)
     {
         byte[] value;
         using (var ms = new MemoryStream())
@@ -18,8 +18,9 @@ public static class OrderExtension
             value = ms.ToArray();
         }
         
-        var message = new Message<Null, byte[]>
+        var message = new Message<string, byte[]>
         {
+            Key = Guid.NewGuid().ToString(),
             Value = value
         };
         return message;

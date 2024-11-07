@@ -8,7 +8,7 @@ namespace Consumer.Services;
 public class ConsumerService : IHostedService, IDisposable
 {
     private readonly KafkaConfiguration _kafkaConfiguration;
-    private readonly IConsumer<Null, byte[]> _consumer;
+    private readonly IConsumer<string, byte[]> _consumer;
     private readonly IMessageService _messageService;
 
     public ConsumerService(IOptions<KafkaConfiguration> kafkaConfigurationOptions)
@@ -50,7 +50,7 @@ public class ConsumerService : IHostedService, IDisposable
         _consumer.Dispose();
     }
 
-    private IConsumer<Null, byte[]> ConfigureConsumer()
+    private IConsumer<string, byte[]> ConfigureConsumer()
     {
         Console.WriteLine($"Configure consuming on: {_kafkaConfiguration.Brokers}");
         
@@ -66,7 +66,7 @@ public class ConsumerService : IHostedService, IDisposable
             EnablePartitionEof = true
         };
 
-        return new ConsumerBuilder<Null, byte[]>(config)
+        return new ConsumerBuilder<string, byte[]>(config)
             .SetStatisticsHandler((_, statistics) => KafkaStatsHandler(statistics))
             .SetErrorHandler((_, error) => KafkaErrorHandler(error))
             .Build();
