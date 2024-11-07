@@ -5,7 +5,7 @@
 //    is regenerated
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace OrdersMessage
+namespace OrdersAsyncContract
 {
 	using System;
 	using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace OrdersMessage
 	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("avrogen", "1.12.0+8c27801dc8d42ccc00997f25c0b8f45f8d4a233e")]
 	public partial class Order : global::Avro.Specific.ISpecificRecord
 	{
-		public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse(@"{""type"":""record"",""name"":""Order"",""namespace"":""OrdersMessage"",""fields"":[{""name"":""Id"",""type"":""int""},{""name"":""Dishes"",""type"":{""type"":""array"",""items"":""string""}},{""name"":""TotalCost"",""type"":""double""},{""name"":""CreatedAt"",""type"":{""type"":""long"",""logicalType"":""timestamp-millis""}}]}");
+		public static global::Avro.Schema _SCHEMA = global::Avro.Schema.Parse(@"{""type"":""record"",""name"":""Order"",""namespace"":""OrdersAsyncContract"",""fields"":[{""name"":""Id"",""type"":""int""},{""name"":""Dishes"",""type"":{""type"":""array"",""items"":""string""}},{""name"":""TotalCost"",""type"":""double""},{""name"":""CreatedAt"",""type"":{""type"":""long"",""logicalType"":""timestamp-millis""}}]}");
 		private int _Id;
 		private IList<System.String> _Dishes;
 		private double _TotalCost;
