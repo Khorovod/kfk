@@ -1,6 +1,6 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Options;
-using OrdersMessage;
+using OrdersAsyncContract;
 using Producer.Extensions;
 using Producer.Infrastructure;
 

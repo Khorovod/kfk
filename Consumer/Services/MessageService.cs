@@ -1,6 +1,6 @@
 ﻿using Avro.IO;
 using Avro.Specific;
-using OrdersMessage;
+using OrdersAsyncContract;
 
 namespace Consumer.Services;
 

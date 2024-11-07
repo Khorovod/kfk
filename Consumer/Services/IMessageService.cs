@@ -1,4 +1,4 @@
-﻿using OrdersMessage;
+﻿using OrdersAsyncContract;
 
 namespace Consumer.Services;
 

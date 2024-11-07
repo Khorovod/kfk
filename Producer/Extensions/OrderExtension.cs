@@ -1,7 +1,7 @@
 ﻿using Avro.IO;
 using Avro.Specific;
 using Confluent.Kafka;
-using OrdersMessage;
+using OrdersAsyncContract;
 
 namespace Producer.Extensions;
 
